@@ -1,0 +1,13 @@
+---
+- hosts: all
+  remote_user: chenjianfei
+  become: yes
+  tasks:
+    - name: update apt cache
+      apt:
+        update_cache: yes
+
+    - name: install softwares
+      apt: 
+        pkg: ['tmux', 'vim', 'htop', 'git']
+
